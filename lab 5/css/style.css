@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4ff;
+  padding: 20px;
+  color: #0a2463;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #e3eaff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(10, 36, 99, 0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #0a2463;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #0a2463;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1.5px solid #0a2463;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+  color: #0a2463;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #274690;
+  background-color: #f5f9ff;
+}
+
+.radio-group, .course-group, .checkbox-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.radio-item, .checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.radio-item input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+  margin-right: 6px;
+  accent-color: #274690;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: #274690;
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 48%;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #1b2a5a;
+}

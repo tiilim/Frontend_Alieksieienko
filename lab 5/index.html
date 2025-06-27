@@ -1,0 +1,137 @@
+<!-- 
+• Використати семантичні теги <form>, <label>
+• Додати атрибути required для обов'язкових полів
+• Встановити мінімальну довжину пароля
+• Використати pattern для валідації електронної пошти
+• Налаштувати методи action та method -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма реєстрації студента</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<!-- Персональні дані
+• Прізвище (текстове поле)
+• Ім'я (текстове поле)
+• По батькові (текстове поле)
+• Електронна пошта (поле email)
+• Пароль (поле password)
+• Підтвердження пароля (поле password) -->
+
+
+
+    <form name="studentForm" action="index.php" method="POST" enctype="multipart/form-data">
+        <h2>Форма реєстрації студента</h2>
+         <div class="form-group">
+            <label for="lastname">Прізвище:</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Прізвище" required>
+        </div>
+            
+        <div class="form-group">
+            <label for="firstname">Ім'я:</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Ім'я" required>
+        </div>
+            
+        <div class="form-group">
+            <label for="middlename">По батькові:</label>
+            <input type="text" id="middlename" name="middlename" placeholder="По батькові" required>
+        </div> 
+
+        <div class="form-group">
+            <label for="email">Електронна пошта:</label>
+            <input type="email" id="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="email@gmail.com" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Введіть пароль" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password_confirm">Підтвердження пароля:</label>
+            <input type="password" id="password_confirm" name="password_confirm" placeholder="Підтвердіть пароль" required>
+        </div>
+ 
+        <!-- Додаткова інформація
+        • Дата народження (поле date)
+        • Стать (радіо-кнопки)
+        • Факультет (випадаючий список)
+        • Курс навчання (радіо-кнопки)
+        • Текстове поле для додаткової інформації
+        • Checkbox згоди на обробку персональних даних -->
+
+         <div class="form-group">
+            <label for="bday">Дата народження:</label>
+            <input type="date" id="bday" name="bday" required>
+        </div>
+
+        <div class="form-group">
+            <label>Стать:</label>
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" id="man" value="Чоловік" name="gender" required>
+                    <label for="man">Чоловік</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="woman" value="Жінка" name="gender" required>
+                    <label for="woman">Жінка</label>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <label for="faculty">Факультет:</label>
+            <select id="faculty" name="faculty" required>
+                <option value="">Оберіть факультет</option>
+                <option value="mmioi">Геометричного моделювання та комп'ютерної графіки</option>
+                <option value="kmpc">Комп'ютерного моделювання процесів та систем</option>
+                <option value="mkim">Іноземні мови</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Курс навчання:</label>
+            <div class="course-group">
+                <div class="radio-item">
+                    <input type="radio" id="first" value="Перший" name="course_of_study" required>
+                    <label for="first">Перший курс</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="second" value="Другий" name="course_of_study" required>
+                    <label for="second">Другий курс</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="third" value="Третій" name="course_of_study" required>
+                    <label for="third">Третій курс</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="fourth" value="Четвертий" name="course_of_study" required>
+                    <label for="fourth">Четвертий курс</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+                <label for="comment">Додаткова інформація:</label>
+                <textarea id="comment" name="comment" rows="3" cols="25"></textarea>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" name="consent" id="consent_to_the_processing_of_personal_data" required>
+                    <label for="consent_to_the_processing_of_personal_data">Згода на обробку персональних даних</label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <input type="submit" value="Надіслати">
+                <input type="reset" value="Скинути">
+            </div>
+    </form>
+</body>
+</html>
